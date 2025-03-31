@@ -5,3 +5,4 @@ function solution(money) {
     return answer;
 
 }
+// return(Math.floor(money/5500),money%5500) 도 가능하다
