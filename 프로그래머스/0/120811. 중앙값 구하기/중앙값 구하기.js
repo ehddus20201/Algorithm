@@ -1,35 +1,24 @@
 function solution(array) {
+    let newArray = [];
     
-    let Newarray=[];
-    let arraycount=0;
-
-    while(arraycount<array.length)
-        {
-            
-            let cnt=0;
-            let minNumber=1000;
-            
-                
-        while(cnt < array.length){
-
-            if(minNumber > array[cnt]){
-                minNumber = array[cnt];
-                }
-                cnt = cnt + 1;
-            }
-        Newarray.push(minNumber);
+    for(let arraycnt = 0; arraycnt<array.length; arraycnt++){
+        let minValue = 1000;
+    
+    for(let cnt = 0; cnt<array.length; cnt++){
+        if(minValue>array[cnt]){
+            minValue=array[cnt];
+        }
         
-        let cnt2=0;
-        while(cnt2<array.length){
-            if(minNumber===array[cnt2]){
-                array[cnt2]=1000;
-                break;
-            }
-        cnt2=cnt2+1;
     }
-            arraycount=arraycount+1;
-}
-   
-    return Newarray[Math.floor(array.length/2)];
-    
+    for(let cnt2 = 0; cnt2<array.length; cnt2++){
+        if(minValue===array[cnt2]){
+            array[cnt2]=1000;
+            break;
+        }
+        
+    }
+    newArray.push(minValue);
+        
+    }
+    return newArray[Math.floor(newArray.length/2)];
 }
