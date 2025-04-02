@@ -1,16 +1,10 @@
 function solution(numbers) {
-    var answer = [];
-    let a=0;
-    while(a < numbers.length){
-            
-    answer.push(numbers[a]*2);
-    a=a+1;
+
+    for(let cnt = 0;cnt < numbers.length; cnt++){
+        numbers.splice(cnt,1,numbers[cnt]*2);
         
     }
-    return answer;
+    return numbers;
+        
+    
 }
-
-
-
-//1. 정수 배열에서 원소 꺼내기.
-//2. 2배 곱하고 새로운 배열에 넣기.
