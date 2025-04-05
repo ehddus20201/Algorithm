@@ -1,5 +1,5 @@
 function solution(letter) {
-    let word = '';
+    
 const morse = { 
     '.-': 'a', '-...': 'b', '-.-.': 'c', '-..': 'd', '.': 'e', '..-.': 'f',
     '--.': 'g', '....': 'h', '..': 'i', '.---': 'j', '-.-': 'k', '.-..': 'l',
@@ -7,19 +7,19 @@ const morse = {
     '...': 's', '-': 't', '..-': 'u', '...-': 'v', '.--': 'w', '-..-': 'x',
     '-.--': 'y', '--..': 'z'
 };
-let alphabet = '';
-let cnt = 0;
-         while(cnt<1000){
-             if(letter[cnt]===' '){
-                 word = word + (morse[alphabet]);
+    let alphabet = '';
+    let word = '';
+
+         for(let i = 0 ; i < letter.length;i++){
+             if(letter[i]===' '){
+                 
+                 word += morse[alphabet];
                  alphabet ='';
-                 cnt = cnt + 1;
              }
-             if(letter[cnt]===undefined){
-                 word = word + (morse[alphabet]);
-                     return word;
+             else{
+                 alphabet +=letter[i];
              }
-             alphabet = alphabet + letter[cnt];
-             cnt = cnt + 1;   
             }
-}
+    word +=morse[alphabet];
+    return word;
+    }
