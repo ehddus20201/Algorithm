@@ -7,10 +7,6 @@ function solution(array, n) {
             lowerValue = Math.abs(array[i]-n);
             closeValue=array[i];
         }
-        else if(Math.abs(array[i]-n)===lowerValue){
-            closeValue = array[i-1];
-        }
-        
     }
     return closeValue;
 }
