@@ -12,9 +12,6 @@ function solution(num) {
         cnt++;
         }
     }
-    if(cnt===500)
-        return -1;
-    else if(num===1)
-        return cnt;
+    return num === 1 ? cnt: -1; 
     
 }
