@@ -1,15 +1,14 @@
 function solution(rsp) {
+    let result =[];
     const win = {
         "2":"0",
         "0":"5",
         "5":"2"
     }
-    
-    let answer ="";
-    
-    for(let cnt = 0; cnt<rsp.length; cnt++){
-        const item = rsp[cnt];
-        answer+=win[item];
+    for(let i =0; i<rsp.length;i++){
+        result.push(win[rsp[i]]);
     }
-    return answer;
+    return result.join("");
+    
+    
 }
