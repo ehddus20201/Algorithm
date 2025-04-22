@@ -1,0 +1,8 @@
+function solution(num_list, n) {
+    let result =[];
+    for(let i =0; i<num_list.length;){
+        result.push(num_list[i]);
+        i+=n;
+    }
+    return result;
+}
