@@ -1,23 +1,26 @@
 function solution(topping) {
-  const n = topping.length;
-  const leftCount = new Array(n).fill(0);
-  const rightCount = new Array(n).fill(0);
+  const leftCnt = [];
+  const rightCnt = [];
 
   const leftSet = new Set();
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < topping.length; i++) {
     leftSet.add(topping[i]);
-    leftCount[i] = leftSet.size;
+    leftCnt.push(leftSet.size);
   }
 
   const rightSet = new Set();
-  for (let i = n - 1; i >= 0; i--) {
+  for (let i = topping.length - 1; i >= 0; i--) {
     rightSet.add(topping[i]);
-    rightCount[i] = rightSet.size;
+    rightCnt.push(rightSet.size);
   }
+    rightCnt.reverse();
 
   let answer = 0;
-  for (let i = 0; i < n - 1; i++) {
-    if (leftCount[i] === rightCount[i + 1]) answer++;
+  for (let i = 0; i < topping.length - 1; i++) {
+    if (leftCnt[i] === rightCnt[i + 1]){
+        answer+=1;
+    }
+        
   }
 
   return answer;
